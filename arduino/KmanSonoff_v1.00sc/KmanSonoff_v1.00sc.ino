@@ -45,8 +45,8 @@
 #define OPT_PIN       14
 #endif
 #define HOST_PREFIX   "Sonoff_%s"
-#define HEADER        "\n\n--------------------  KmanSonoff_Basic_v2.00  ------------------"
-#define VER           "sb_v2.00"
+#define HEADER        "\n\n---------------------  KmanSonoff_v1.00sc  -------------------"
+#define VER           "kssc_v1.00"
 
 bool OTAupdate = false;
 bool sendStatus = false;
