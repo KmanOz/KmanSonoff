@@ -15,9 +15,9 @@ int kRetries = 10;                                            // WiFi retry coun
 int QOS = 0;                                                  // QOS level for all mqtt messages. (0 or 1)
 
 #define CH_1                                                  // Channel 1 (Default single channel. Do not comment out)
-#define CH_2                                                  // Channel 2 (Uncomment to use 2nd Channel)
-#define CH_3                                                  // Channel 3 (Uncomment to use 3rd Channel)
-#define CH_4                                                  // Channel 4 (Uncomment to use 4th Channel)
+//#define CH_2                                                  // Channel 2 (Uncomment to use 2nd Channel)
+//#define CH_3                                                  // Channel 3 (Uncomment to use 3rd Channel)
+//#define CH_4                                                  // Channel 4 (Uncomment to use 4th Channel)
 
 #define MQTT_SERVER      "192.168.0.100"                      // Your mqtt server ip address
 #define MQTT_PORT        1883                                 // Your mqtt port
