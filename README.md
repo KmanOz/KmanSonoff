@@ -2,9 +2,9 @@
 
 ![](images/sonoff.png "Sonoff Range")
 
-KmanSonoff is the updated version of [KmanOz/Sonoff-HomeAssistant](https://github.com/KmanOz/Sonoff-HomeAssistant) which is alternative firmware for the brilliant & cheap range of ESP-8266 based WiFi controlled power switches. This updated firmware simplifies setup of the switch even more so than the original, yet keeps the firmware and memory footprint basic and lightweight just like it's predecessor. Initial setup is now done in one file "config.h" located in the same directory as the sketch. Both versions are OTA upgradable and all naming (mqtt client name & mDNS for OTA) is automatic based on the MAC address of the Wifi radio.
+KmanSonoff is the updated version of [KmanOz/Sonoff-HomeAssistant](https://github.com/KmanOz/Sonoff-HomeAssistant) which is alternative firmware for the brilliant & cheap range of ESP-8266 based WiFi controlled power switches. This updated firmware simplifies setup of the switch even more so than the original, yet keeps the firmware and memory footprint basic and lightweight just like it's predecessor. Initial setup is now done in one file "config_sc.h" for the single channel firmware or "config_mc.h" for the multichannel firmware located in the same directory as the sketch. Both versions are OTA upgradable and all naming (mqtt client name & mDNS for OTA) is automatic based on the MAC address of the ESP Wifi radio.
 
-I realize there are many other mqtt based firmware(s) that have been written for the Sonoff switches, but I found most of them overly complex for my liking. This firmware is basic in operation but ***extremely stable*** and just gets the job done. Enjoy !!
+I realize there are many other mqtt based firmware(s) that have been written for the Sonoff switches, but I found most of them overly complex for my liking. This firmware is basic in operation but ***extremely stable*** and just gets the job done.
 
 #### Currently Supported Devices (More to come)
 
@@ -34,7 +34,7 @@ I use the [lmroy](https://github.com/Imroy/pubsubclient) version of this excelle
 
 It's currently setup to use only v3.1.1 of the mqtt standard and will only work on that version broker unless you modify the code so make sure your broker is setup to use v3.1.1 of the mqtt standard and not v3.1.
 
-**FOR ALL THE PEOPLE THAT SKIP THIS STEP, DON'T. YOU CANNOT USE OTHER MQTT LIBRARIES EXCEPT FOR THIS ONE**
+**FOR ALL THE PEOPLE THAT SKIP THIS STEP, DON'T. YOU CANNOT USE OTHER MQTT LIBRARIES**
 
 ``` bash
 $ git clone https://github.com/Imroy/pubsubclient
@@ -58,13 +58,13 @@ To start off, change the "WIFI_SSID, WIFI_PASS, MQTT_SERVER, MQTT_PORT, MQTT_USE
 #define WIFI_PASS       "homepass"                           // wifi password
 ```
 
-Additionally other parameters can be changed in the file at your discretion like whether or not you wish to remember the last relay state, retain mqtt messages, update frequecy for WiFi retries etc. See "config.h" for all options.
+Additionally other parameters can be changed in the file at your discretion like whether or not you wish to remember the last relay state, retain mqtt messages, update frequecy for WiFi retries etc. See "config_sc.h or config_mc.h" for all options.
 
 ## Flashing the Firmware
 
 I will assume you have the necessary skills to complete this step. As mentioned earlier, you'll need the Arduino IDE and you'll need to move the files you just cloned to the right directories. There are plenty or tutorials that cover all the steps involved already published on the Internet and it's only a Google search away.
 
-As for the switch modifications, it's simply a matter of opening up the switch, installing a 4 or 5 pin header (depending on switch type) and then holding down the main switch (or installing a jumper on some models) on the unit before you power it up with your FTDI adapter. You are then good to go to re-flash your new firmware. The photo below is for illustration only and different products will require the same basic connection but headers will be located in different positions etc. (If anyone is willing to help feel free to do a pull and add details instructions for other switches. Sorry too busy).
+As for the switch modifications, it's simply a matter of opening up the switch, installing a 4 or 5 pin header (depending on switch type) and then holding down the main switch (or installing a jumper on some models) on the unit before you power it up with your FTDI adapter. You are then good to go to re-flash your new firmware. The photo below is for illustration only and different products will require the same basic connection but headers will be located in different positions etc. (If anyone is willing to help, feel free to do a PR and add detailed instructions for other switches. Sorry too busy).
 
 ![alt FTDI Diagram](images/th10ftdi.JPG "FTDI Diagram")
 
