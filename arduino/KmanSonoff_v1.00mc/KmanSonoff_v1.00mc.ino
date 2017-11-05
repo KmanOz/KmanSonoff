@@ -48,8 +48,8 @@
 #define L_4 15
 #define LED 13
 #define HOST_PREFIX  "Sonoff_%s"
-#define HEADER       "\n\n-------------  KmanSonoff_4CH_v2.00  -------------"
-#define VER          "s4ch_v2.00"
+#define HEADER       "\n\n--------------  KmanSonoff_v1.00mc  --------------"
+#define VER          "ksmc_v1.00"
 
 bool requestRestart = false;
 bool OTAupdate = false;
