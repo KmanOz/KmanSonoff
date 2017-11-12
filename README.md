@@ -112,9 +112,9 @@ sensor:
 
 As mentioned earlier, the commands are very basic. In fact the switch will respond to 4 basic mqtt commands and they are :-
 
-- **on** (Turns the relay and LED on)(For 4CH precede the *on* command by the number of the relay. e.g 1on, 3on etc)
-- **off** (Turns the relay and LED off)(For 4CH precede the *off* command by the number of the relay. e.g 2off, 3off etc)
-- **stat** (Returns the status of the switch via mqtt message)(For 4CH the number of the relay will precede the status. e.g. 1on, 4off)
+- **on** (Turns the relay and LED on)(For multi channel precede the *on* command by the channel no#. e.g 1on, 3on etc)
+- **off** (Turns the relay and LED off)(For multi channel precede the *off* command by the channel no#. e.g 2off, 3off etc)
+- **stat** (Returns the status of the switch via mqtt message)(For multi channel the channel no# will precede the status. e.g. 1on, 4off)
 - **reset** (Forces a restart of the switch) (4 long flashes of the status LED)
 
 If you've enabled the temperature function, you have an additional option.
