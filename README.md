@@ -9,6 +9,8 @@ I realize there are many other mqtt based firmware(s) that have been written for
 #### Currently Supported Devices (More to come)
 
 - [Sonoff Basic](https://www.itead.cc/smart-home/sonoff-wifi-wireless-switch.html?acc=70efdf2ec9b086079795c442636b55fb)
+- [Sonoff RF](https://www.itead.cc/smart-home/sonoff-rf.html?acc=70efdf2ec9b086079795c442636b55fb)
+- [Sonoff Slampher](https://www.itead.cc/slampher.html?acc=70efdf2ec9b086079795c442636b55fb)
 - [Sonoff TH10/TH16](https://www.itead.cc/sonoff-th.html?acc=70efdf2ec9b086079795c442636b55fb)
 - [Sonoff Touch](https://www.itead.cc/smart-home/sonoff-touch.html?acc=70efdf2ec9b086079795c442636b55fb)
 - [Sonoff S20](https://www.itead.cc/smart-home/smart-socket.html?acc=70efdf2ec9b086079795c442636b55fb)
