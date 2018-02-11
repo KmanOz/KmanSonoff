@@ -329,17 +329,18 @@ void checkWallSwitch() {
 #ifdef TEMP
 void getTemp() {
   Serial.print("DHT read . . . . . . . . . . . . . . . . . ");
-  float dhtH, dhtT;
+  float dhtH, dhtT, dhtHI;
   char message_buff[60];
   dhtH = dht.readHumidity();
-  dhtT = dht.readTemperature();
+  dhtT = dht.readTemperature(UseFahrenheit);
+  dhtHI = dht.computeHeatIndex(dhtT, dhtH, UseFahrenheit);
   if(digitalRead(LED) == LOW)  {
     blinkLED(LED, 100, 1);
   } else {
     blinkLED(LED, 100, 1);
     digitalWrite(LED, HIGH);
   }
-  if (isnan(dhtH) || isnan(dhtT)) {
+  if (isnan(dhtH) || isnan(dhtT) || isnan(dhtHI)) {
     if (kRetain == 0) {
       mqttClient.publish(MQTT::Publish(MQTT_TOPIC"/debug","\"DHT Read Error\"").set_qos(QOS));
     } else {
@@ -349,7 +350,7 @@ void getTemp() {
     tempReport = false;
     return;
   }
-  String pubString = "{\"Temp\": "+String(dhtT)+", "+"\"Humidity\": "+String(dhtH) + "}";
+  String pubString = "{\"Temp\": "+String(dhtT)+", "+"\"Humidity\": "+String(dhtH)+", "+"\"HeatIndex\": "+String(dhtHI) + "}";
   pubString.toCharArray(message_buff, pubString.length()+1);
   if (kRetain == 0) {
     mqttClient.publish(MQTT::Publish(MQTT_TOPIC"/temp", message_buff).set_qos(QOS));
