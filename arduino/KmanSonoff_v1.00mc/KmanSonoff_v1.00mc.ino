@@ -187,6 +187,9 @@ void setup() {
   WiFi.hostname(UID);
   WiFi.begin(WIFI_SSID, WIFI_PASS);
   ArduinoOTA.setHostname(UID);
+  #ifdef OTA_PASS
+    ArduinoOTA.setPassword(OTA_PASS);
+  #endif
   ArduinoOTA.onStart([]() {
     OTAupdate = true;
     blinkLED(LED, 400, 2);
