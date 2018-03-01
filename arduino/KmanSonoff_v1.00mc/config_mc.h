@@ -27,6 +27,7 @@ int QOS = 0;                                                  // QOS level for a
 
 #define WIFI_SSID        "wifissid"                           // Your WiFi ssid
 #define WIFI_PASS        "wifipass"                           // Your WiFi password
+#define OTA_PASS         0				                            // OTA Password for reflashing - if 0 disabled
 /*
   ======================================================================================================================================
 */
